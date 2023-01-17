@@ -42,12 +42,12 @@ img {
   padding-left: 48px;
   background-color: #ffffff;
 }
-.main-nav {
+.container .main-nav {
   display: flex;
   align-items: center;
 }
 
-.site-nav {
+.container .site-nav {
   display: flex;
   flex-wrap: wrap;
   /* очень важно для навигации оставлять возможности переполнения */
@@ -58,15 +58,15 @@ img {
   list-style: none;
 }
 
-.site-nav li {
+.container .site-nav li {
   margin-right: 10px;
 }
 
-.site-nav li:last-child {
+.container .site-nav li:last-child {
   margin-left: 5px;
 }
 
-.logo {
+.container .logo {
   width: 176px;
   margin-right: 60px;
   flex-shrink: 0;
@@ -75,12 +75,12 @@ img {
   transition: opacity 0.3s;
   /* применяем к начальному состоянию, чтобы красивое изменение было как при подключении состояния, так и при отключении */
 }
-.logo:hover,
-.logo:focus {
+.container .logo:hover,
+.container .logo:focus {
   opacity: 0.6;
 }
 
-.user-nav {
+.container .user-nav {
   display: flex;
   flex-wrap: wrap;
   flex-shrink: 0;
@@ -92,7 +92,7 @@ img {
   list-style: none;
 }
 
-.nav-link {
+.container .nav-link {
   display: block;
   padding: 5px;
   margin-left: 5px;
@@ -103,17 +103,17 @@ img {
   position: relative;
 }
 
-.nav-link:hover,
-.nav-link:focus {
+.container .nav-link:hover,
+.container .nav-link:focus {
   opacity: 0.6;
 }
 
-.nav-link-current {
+.container .nav-link-current {
   color: #4f4f4f;
   font-weight: 600;
 }
 
-.nav-link-current::after {
+.container .nav-link-current::after {
   content: "";
   position: absolute;
   bottom: -3px;
@@ -125,13 +125,13 @@ img {
   background-repeat: no-repeat;
 }
 
-.user-nav li {
+.container .user-nav li {
   margin-top: 10px;
   margin-bottom: 10px;
   margin-left: 25px;
 }
 
-.button {
+.container .button {
   display: block;
   max-width: 315px;
   padding-top: 5px;
@@ -143,28 +143,62 @@ img {
   border-radius: 32px;
 }
 
-.button-outline {
+.container .button-outline {
   color: inherit;
   background-color: inherit;
   transition: color 0.3s, opacity 0.3s;
 }
 
-.button-filled {
+.container .button-filled {
   color: #f8f7fd;
   background-color: #03919a;
   transition: color 0.3s, background-color 0.3s;
   /* Теоретически можно было написать all 0.3s, но это значение негативно влияет на скорость загрузки сайта и сложно расшифровывается */
 }
 
-.button-filled:hover,
-.button-filled:focus {
+.container .button-filled:hover,
+.container .button-filled:focus {
   color: inherit;
   background-color: inherit;
 }
 
-.button-outline:hover,
-.button-outline:focus {
+.container .button-outline:hover,
+.container .button-outline:focus {
   color: #f8f7fd;
   opacity: 0.6;
   background-color: #03919a;
+}
+
+.vertical .main-nav a {
+  display: block;
+  padding: 5px; /* вот собственно увеличенная зона клика, со всех сторон */
+}
+
+.vertical .nav-list {
+  margin: 0;
+  /* вот отступы всего элемента */
+  padding-top: 16px;
+  padding-bottom: 9px;
+  padding-left: 8px;
+  list-style: none;
+}
+
+.vertical .main-nav ul + ul::before {
+  content: "";
+  position: absolute;
+  left: -20px;
+  right: -20px;
+  top: 0;
+  display: block;
+  height: 1px;
+  background-color: #fffcfa;
+  opacity: 0.3;
+}
+
+.vertical .main-nav-link:hover,
+.vertical .main-nav-link:focus {
+  opacity: 0.6;
+  border-bottom: 1px solid #ffffff; /* —  подчёркивание зоны клика */
+  background-color: #384461;
+  border-radius: 16px; /* — изменится фон, и края у него будут скруглены */
 }

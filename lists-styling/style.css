@@ -1,0 +1,52 @@
+.first-example h1 {
+  font-size: 36px;
+  line-height: 1.4;
+}
+
+.first-example h2 {
+  margin: 10px 0;
+  padding-left: 56px;
+  font-size: 24px;
+  line-height: 1.5;
+}
+
+.first-example p {
+  margin: 0;
+}
+
+.first-example .games {
+  max-width: 600px;
+  padding: 0;
+  margin: 0;
+
+  counter-reset: list-counter;
+
+  list-style: none;
+}
+
+.first-example .games li {
+  position: relative;
+
+  counter-increment: list-counter;
+
+  margin-bottom: 32px;
+}
+
+.first-example .games li::before {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  left: 0;
+  top: 0;
+
+  content: "0" counter(list-counter);
+
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 1.2;
+  text-align: center;
+  color: #ffffff;
+
+  background-color: #ffad0f;
+  border-radius: 4px;
+}

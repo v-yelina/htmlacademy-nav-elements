@@ -1,0 +1,204 @@
+.visually-hidden {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+body {
+  min-width: 960px;
+  /* мы делаем фиксированный макет */
+  margin: 0;
+  /* сбросы не делали, так что убираем отступы тут */
+
+  /* Параметры шрифта указываем здесь, потому что они относятся ко всему макету целиком */
+  font-size: 16px;
+  line-height: 22px;
+  font-style: normal;
+  font-weight: normal;
+  color: #73a1a4;
+  background-color: #ffffff;
+}
+
+a {
+  text-decoration: none;
+  /* из-за того, что во всём макете выключено подчёркивание ссылок. На живых сайтах такого обычно не происходит */
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  /* эти параметры нужны, чтобы картинки не теряли пропорции ни при каких обстоятельствах */
+}
+
+.container {
+  max-width: 920px;
+  /* это наше рабочее пространство */
+  margin: 0 auto;
+  padding-right: 48px;
+  padding-left: 48px;
+  background-color: #ffffff;
+}
+.container .main-nav {
+  display: flex;
+  align-items: center;
+}
+
+.container .site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  /* очень важно для навигации оставлять возможности переполнения */
+  margin-right: 10px;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.container .site-nav li {
+  margin-right: 10px;
+}
+
+.container .site-nav li:last-child {
+  margin-left: 5px;
+}
+
+.container .logo {
+  width: 176px;
+  margin-right: 60px;
+  flex-shrink: 0;
+  /* логотип нельзя сжимать */
+  opacity: 1;
+  transition: opacity 0.3s;
+  /* применяем к начальному состоянию, чтобы красивое изменение было как при подключении состояния, так и при отключении */
+}
+.container .logo:hover,
+.container .logo:focus {
+  opacity: 0.6;
+}
+
+.container .user-nav {
+  display: flex;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+  /* пользовательскую навигацию тоже нельзя сжимать */
+  margin-left: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.container .nav-link {
+  display: block;
+  padding: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  transition: opacity 0.3s;
+  color: inherit;
+  opacity: 1;
+  position: relative;
+}
+
+.container .nav-link:hover,
+.container .nav-link:focus {
+  opacity: 0.6;
+}
+
+.container .nav-link-current {
+  color: #4f4f4f;
+  font-weight: 600;
+}
+
+.container .nav-link-current::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: -1px;
+  width: 120%;
+  height: 8px;
+  background-color: #adf5fa;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.container .user-nav li {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 25px;
+}
+
+.container .button {
+  display: block;
+  max-width: 315px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 18px;
+  padding-left: 18px;
+  text-align: center;
+  border: 2px solid #03919a;
+  border-radius: 32px;
+}
+
+.container .button-outline {
+  color: inherit;
+  background-color: inherit;
+  transition: color 0.3s, opacity 0.3s;
+}
+
+.container .button-filled {
+  color: #f8f7fd;
+  background-color: #03919a;
+  transition: color 0.3s, background-color 0.3s;
+  /* Теоретически можно было написать all 0.3s, но это значение негативно влияет на скорость загрузки сайта и сложно расшифровывается */
+}
+
+.container .button-filled:hover,
+.container .button-filled:focus {
+  color: inherit;
+  background-color: inherit;
+}
+
+.container .button-outline:hover,
+.container .button-outline:focus {
+  color: #f8f7fd;
+  opacity: 0.6;
+  background-color: #03919a;
+}
+
+.vertical .main-nav a {
+  display: block;
+  padding: 5px; /* вот собственно увеличенная зона клика, со всех сторон */
+}
+
+.vertical .nav-list {
+  margin: 0;
+  /* вот отступы всего элемента */
+  padding-top: 16px;
+  padding-bottom: 9px;
+  padding-left: 8px;
+  list-style: none;
+}
+
+.vertical .main-nav ul + ul::before {
+  content: "";
+  position: absolute;
+  left: -20px;
+  right: -20px;
+  top: 0;
+  display: block;
+  height: 1px;
+  background-color: #fffcfa;
+  opacity: 0.3;
+}
+
+.vertical .main-nav-link:hover,
+.vertical .main-nav-link:focus {
+  opacity: 0.6;
+  border-bottom: 1px solid #ffffff; /* —  подчёркивание зоны клика */
+  background-color: #384461;
+  border-radius: 16px; /* — изменится фон, и края у него будут скруглены */
+}

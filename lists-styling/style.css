@@ -1,3 +1,8 @@
+.main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .first-example h1 {
   font-size: 36px;
   line-height: 1.4;
@@ -49,4 +54,52 @@
 
   background-color: #ffad0f;
   border-radius: 4px;
+}
+
+.second-example .code-list {
+  margin: 0;
+  padding: 30px;
+
+  counter-reset: li;
+
+  list-style: none;
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+}
+
+.second-example .code-list li {
+  position: relative;
+  margin: 0 0 40px 2em;
+  padding: 8px 16px;
+  width: 522px;
+
+  counter-increment: li;
+
+  font-size: 24px;
+  line-height: 32px;
+  color: #333333;
+  border-bottom: 2px solid #39b54a;
+}
+
+.second-example .code-list li:last-child {
+  margin-bottom: 0;
+}
+
+.second-example .code-list li::before {
+  position: absolute;
+  top: -10px;
+  left: -1.5em;
+  width: 60px;
+  height: 60px;
+
+  content: counter(li);
+
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 60px;
+  text-align: center;
+  color: #ffffff;
+
+  background-color: #39b54a;
 }

@@ -1,0 +1,44 @@
+.breadcrumbs {
+  list-style: none;
+  margin-top: 0;
+  margin-bottom: 23px;
+  padding: 0;
+}
+
+.breadcrumbs li {
+  display: inline;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.breadcrumb-link {
+  color: inherit; /* цвет наследуется, указываем, чтобы он не был стандартным синим */
+  text-decoration: none; /* ссылка не подчёркивается */
+  opacity: 1; /* непрозрачные ссылки в состоянии покоя */
+}
+
+.breadcrumb-link:hover,
+.breadcrumb-link:focus {
+  opacity: 0.6; /* прозрачность меняется по наведению */
+}
+
+.breadcrumbs li:last-child {
+  opacity: 0.5; /* последний li с родителем с классом breadcrumbs будет полупрозрачным */
+}
+
+.breadcrumbs-home li + li::before {
+  content: "/\00a0"; /* слеш дополнен неразрывным пробелом */
+  color: #d6dde4; /* цвет текста в данном случае применится к содержанию свойства content */
+}
+.breadcrumbs-text li {
+  margin-right: 25px;
+  position: relative;
+}
+.breadcrumbs-text li + li::before {
+  content: "\1F812";
+  position: absolute;
+  top: 0;
+  left: -22px;
+  font-size: inherit; /* управляется по-прежнему как шрифт */
+  color: #e4b77d;
+}

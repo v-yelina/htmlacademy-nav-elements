@@ -37,7 +37,9 @@
 }
 
 .main-nav a:hover,
-.main-nav a:focus {
+.main-nav a:focus,
+.header-btns button:hover,
+.header-btns button:focus {
   opacity: 0.6;
 }
 .main-nav a:active {

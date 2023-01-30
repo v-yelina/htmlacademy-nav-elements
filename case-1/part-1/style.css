@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
+
+:root {
+  --header-main-color: #0f00b6;
+  --header-background-color: #f8f7fd;
+}
+.header {
+  list-style: none;
+  box-sizing: border-box;
+  padding: 30px 98px;
+  display: flex;
+  gap: 30px;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  background-color: var(--header-background-color);
+}
+
+.main-nav {
+  display: flex;
+  column-gap: 25px;
+  flex-wrap: wrap;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 1082px) {
+  .main-nav {
+    display: flex;
+    column-gap: 10px;
+  }
+}
+
+.main-nav a {
+  color: inherit;
+  text-decoration: none;
+  opacity: 1;
+  align-items: center;
+  transition: 0.3s;
+}
+
+.main-nav a:hover,
+.main-nav a:focus,
+.header-btns button:hover,
+.header-btns button:focus {
+  opacity: 0.6;
+}
+.main-nav a:active {
+  color: var(--header-main-color);
+}
+.header-btns {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+@media screen and (max-width: 786px) {
+  .header-btns {
+    gap: 10px;
+  }
+  .header-btns button {
+    padding: 10px 10px;
+  }
+}
+
+.header-btns button {
+  background-color: transparent;
+  padding: 10px 24px;
+  border: 2px solid;
+  border-color: var(--header-main-color);
+  transition: 0.3s;
+}
+
+.header-btns .login {
+  color: #fff;
+  background-color: var(--header-main-color);
+}
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+.footer {
+  max-width: 100%;
+  padding: 55px 98px 0;
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: auto auto;
+  grid-gap: 55px 113px;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+}
+.contacts {
+  display: flex;
+  flex-direction: column;
+}
+
+.contacts img {
+  margin: -10px 0 22px;
+}
+
+.contacts__phone {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.footer__nav {
+  display: flex;
+  column-gap: 100px;
+}
+.footer__nav div {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer__nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer__nav dt {
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.footer__nav dd {
+  margin: 0;
+}
+
+.footer__legal {
+  display: flex;
+  padding-top: 15px;
+  font-size: 12px;
+  justify-content: space-between;
+  border-top: 1px solid rgba(28, 28, 28, 0.2);
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
